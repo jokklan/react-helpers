@@ -1,6 +1,6 @@
 {
   "name": "@jokklan/react-helpers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My utility functions for React",
   "main": "index.js",
   "author": "Johan Frølich <johanfrolich@gmail.com> (http://github.com/jokklan)",
