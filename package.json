@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "lodash": "^4.17.20"
+    "lodash": "4.x.x",
+    "react": ">= 16.0.0"
   },
   "devDependencies": {
     "@jokklan/eslint-config": "^1.0.1",
@@ -22,6 +23,7 @@
     "eslint-plugin-react-app": "^6.2.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "lodash": "^4.17.20",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "react": "^17.0.1"
   }
 }
