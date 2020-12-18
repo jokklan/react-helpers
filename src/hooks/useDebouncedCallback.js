@@ -1,15 +1,17 @@
-import { debounce } from 'lodash'
+import debounce from 'lodash/debounce'
 import { useMemo } from 'react'
 
 import useAutoUpdateRef from './useAutoUpdateRef'
 
 const resolvePromise = (resolve) => resolve()
 
-const useDebouncedCallback = (callback, delay, options) => {
+const useDebouncedCallback = (callback, wait, options = {}) => {
   const callbackRef = useAutoUpdateRef(callback)
+
+  const { leading, trailing, maxWait } = options
   const debouncedResolve = useMemo(
-    () => debounce(resolvePromise, delay, options),
-    [delay, options]
+    () => debounce(resolvePromise, wait, { leading, trailing, maxWait }),
+    [wait, leading, trailing, maxWait]
   )
 
   const asyncCallback = useMemo(() => {

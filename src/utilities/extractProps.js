@@ -4,6 +4,7 @@ import partition from 'lodash/partition'
 /**
  * Partition a props object into two objects, by extracting all props passed
  * as `extractKeys`.
+ *
  * arguments: (props, extractKeys).
  *
  * @since 1.0.1

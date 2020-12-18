@@ -1,2 +1,3 @@
-/* eslint-disable import/prefer-default-export */
+export * from './deepIterate'
+export { default as extractOptions } from './extractOptions'
 export { default as extractProps } from './extractProps'

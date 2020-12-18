@@ -1,6 +1,7 @@
-import throttle from 'lodash/throttle'
-import { useState, useCallback, useRef, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 
+import useIsClient from './useIsClient'
+import useThrottledCallback from './useThrottledCallback'
 import useWindowResizeHandler from './useWindowResizeHandler'
 
 const getSize = (isClient = true) => {
@@ -12,22 +13,24 @@ const getSize = (isClient = true) => {
   }
 }
 
-const useWindowSize = (options = {}) => {
-  const { throttle: throttleTime } = options
-  const [windowSize, setWindowSize] = useState(getSize())
-  const throttledFunction = useRef()
+const defaultThrottleTime = 100
 
-  useEffect(() => {
-    throttledFunction.current = throttle(() => {
-      setWindowSize(getSize())
-    }, throttleTime)
-  }, [throttleTime])
+const useWindowSize = (options = {}) => {
+  const isClient = useIsClient
+  const { throttle: throttleTime } = {
+    throttle: defaultThrottleTime,
+    ...options
+  }
+
+  const [windowSize, setWindowSize] = useState(getSize(isClient))
 
   const handleResize = useCallback(() => {
-    throttledFunction.current()
-  }, [])
+    setWindowSize(getSize(isClient))
+  }, [isClient])
 
-  useWindowResizeHandler(handleResize)
+  const throttledHandleResize = useThrottledCallback(handleResize, throttleTime)
+
+  useWindowResizeHandler(throttledHandleResize)
 
   return windowSize
 }

@@ -1,10 +1,14 @@
 import { useEffect } from 'react'
 
+import useAutoUpdateRef from './useAutoUpdateRef'
+
 const useAsyncEffect = (asyncFunc, dependencies) => {
+  const asyncFuncRef = useAutoUpdateRef(asyncFunc)
+
   useEffect(() => {
-    asyncFunc()
+    asyncFuncRef.current()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [asyncFunc, ...dependencies])
+  }, dependencies)
 }
 
 export default useAsyncEffect
