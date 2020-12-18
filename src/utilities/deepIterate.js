@@ -1,7 +1,7 @@
-import isArray from 'lodash/isArray'
-import isObject from 'lodash/isObject'
-import isPlainObject from 'lodash/isPlainObject'
-import transform from 'lodash/transform'
+import isArray from 'lodash-es/isArray'
+import isObject from 'lodash-es/isObject'
+import isPlainObject from 'lodash-es/isPlainObject'
+import transform from 'lodash-es/transform'
 
 export const deepMapValues = (object, mapFunction) => {
   const mapValue = (value, key) => {

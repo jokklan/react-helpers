@@ -1,4 +1,4 @@
-import isEqual from 'lodash/isEqual'
+import isEqual from 'lodash-es/isEqual'
 import { useRef } from 'react'
 
 const useDeepCompareMemoize = (value) => {

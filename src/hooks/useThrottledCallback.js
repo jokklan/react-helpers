@@ -1,4 +1,4 @@
-import throttle from 'lodash/throttle'
+import throttle from 'lodash-es/throttle'
 import { useMemo } from 'react'
 
 import useAutoUpdateRef from './useAutoUpdateRef'

@@ -1,5 +1,5 @@
-import fromPairs from 'lodash/fromPairs'
-import partition from 'lodash/partition'
+import fromPairs from 'lodash-es/fromPairs'
+import partition from 'lodash-es/partition'
 
 /**
  * Partition a props object into two objects, by extracting all props passed

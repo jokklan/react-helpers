@@ -1,4 +1,4 @@
-import delay from 'lodash/delay'
+import delay from 'lodash-es/delay'
 import { useRef, useMemo, useEffect, useCallback } from 'react'
 
 import useAutoUpdateRef from './useAutoUpdateRef'

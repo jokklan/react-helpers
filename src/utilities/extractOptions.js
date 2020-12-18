@@ -1,5 +1,5 @@
-import isPlainObject from 'lodash/isPlainObject'
-import last from 'lodash/last'
+import isPlainObject from 'lodash-es/isPlainObject'
+import last from 'lodash-es/last'
 
 /**
  * Extracts options from a set of arguments.
